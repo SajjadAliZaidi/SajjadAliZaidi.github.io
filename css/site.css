@@ -45,14 +45,14 @@ body {
 }
 
 header {
-    height: 70%;
+    height: 75%;
 }
 
 .view {
     height: 100%;
 }
 
-.view h1 {
+.view h2 {
     border: 3px solid white;
     background: #000000a8;
     border-radius: 20px;
