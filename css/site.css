@@ -1,0 +1,59 @@
+.zoom-element {
+    transition: transform 600ms;
+    cursor: pointer;
+}
+
+.zoom-element:hover {
+    transform: scale(1.1);
+}
+
+.view {
+    background: url("../images/background_cs.jpg")no-repeat center center;
+    background-size: cover;
+}
+
+@media (min-width: 768px) {
+    .view {
+        overflow: visible;
+        margin-top: -56px;
+    }
+}
+
+.navbar {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    z-index: 1;
+}
+
+.navbar {
+    background-color: transparent;
+}
+
+.top-nav-collapse {
+    background-color: #4285F4;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #4285F4;
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+header {
+    height: 70%;
+}
+
+.view {
+    height: 100%;
+}
+
+.view h1 {
+    border: 3px solid white;
+    background: #000000a8;
+    border-radius: 20px;
+}
