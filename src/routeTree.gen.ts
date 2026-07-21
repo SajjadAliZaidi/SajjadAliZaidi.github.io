@@ -10,33 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProjectsAskyourpagesRouteImport } from './routes/projects/askyourpages'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectsAskyourpagesRoute = ProjectsAskyourpagesRouteImport.update({
+  id: '/projects/askyourpages',
+  path: '/projects/askyourpages',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/projects/askyourpages': typeof ProjectsAskyourpagesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/projects/askyourpages': typeof ProjectsAskyourpagesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/projects/askyourpages': typeof ProjectsAskyourpagesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/projects/askyourpages'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/projects/askyourpages'
+  id: '__root__' | '/' | '/projects/askyourpages'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ProjectsAskyourpagesRoute: typeof ProjectsAskyourpagesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects/askyourpages': {
+      id: '/projects/askyourpages'
+      path: '/projects/askyourpages'
+      fullPath: '/projects/askyourpages'
+      preLoaderRoute: typeof ProjectsAskyourpagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ProjectsAskyourpagesRoute: ProjectsAskyourpagesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

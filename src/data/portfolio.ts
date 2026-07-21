@@ -50,6 +50,14 @@ export const certifications = [
 
 export const projects = [
   {
+    title: "AskYourPages",
+    description: "Full-stack RAG app that lets users upload PDF books and ask questions about them, getting AI answers with page-level citations.",
+    tags: ["TypeScript", "React", "RAG"],
+    githubUrl: null,
+    liveUrl: null,
+    internalUrl: "/projects/askyourpages",
+  },
+  {
     title: "Booking Automation System",
     description: "Fixed race conditions in a reservation platform's automation engine, raising success rate from ~65% to 90%+ by redesigning the retry and state-reconciliation logic.",
     tags: ["Ruby on Rails", "React"],

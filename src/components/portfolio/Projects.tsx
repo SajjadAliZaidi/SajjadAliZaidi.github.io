@@ -1,4 +1,5 @@
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { Section } from "./Section";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -8,13 +9,27 @@ import { useIsMounted } from "../../hooks/use-is-mounted";
 
 function LinkSlot({
   href,
+  internalUrl,
   icon: Icon,
   label,
 }: {
   href?: string | null;
-  icon: typeof Github;
+  internalUrl?: string | null;
+  icon: typeof Github | typeof ArrowRight;
   label: string;
 }) {
+  if (internalUrl) {
+    return (
+      <Link
+        to={internalUrl}
+        className="inline-flex items-center gap-1.5 rounded-md border border-border px-2.5 py-1 text-xs text-foreground transition-colors hover:border-primary hover:text-primary"
+      >
+        <Icon className="h-3.5 w-3.5" />
+        {label}
+      </Link>
+    );
+  }
+
   if (!href) {
     return (
       <span className="inline-flex cursor-not-allowed items-center gap-1.5 rounded-md border border-border bg-muted/40 px-2.5 py-1 text-xs text-muted-foreground opacity-60">
@@ -58,6 +73,11 @@ function ProjectCard({ p }: { p: (typeof projects)[0] }) {
           ))}
         </div>
         <div className="mt-5 flex flex-wrap gap-2">
+          {/* @ts-ignore */}
+          {p.internalUrl && (
+            // @ts-ignore
+            <LinkSlot internalUrl={p.internalUrl} icon={ArrowRight} label="View Project" />
+          )}
           <LinkSlot href={p.githubUrl} icon={Github} label="GitHub" />
           <LinkSlot href={p.liveUrl} icon={ExternalLink} label="Live Demo" />
         </div>
