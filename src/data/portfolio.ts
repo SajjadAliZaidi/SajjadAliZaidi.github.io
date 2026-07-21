@@ -77,6 +77,7 @@ export const projects = [
     tags: ["TypeScript", "React", "Vite", "Tailwind", "MUI", "Python/FastAPI", "SQLAlchemy", "MySQL", "Firebase Hosting", "GitHub Actions"],
     githubUrl: null,
     liveUrl: null,
+    internalUrl: "/projects/padel-tournament",
   },
   {
     title: "Content Moderation Extension",

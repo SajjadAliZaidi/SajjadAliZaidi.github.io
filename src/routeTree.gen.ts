@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProjectsAskyourpagesRouteImport } from './routes/projects/askyourpages'
+import { Route as ProjectsPadelTournamentRouteImport } from './routes/projects/padel-tournament'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,31 +23,40 @@ const ProjectsAskyourpagesRoute = ProjectsAskyourpagesRouteImport.update({
   path: '/projects/askyourpages',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectsPadelTournamentRoute = ProjectsPadelTournamentRouteImport.update({
+  id: '/projects/padel-tournament',
+  path: '/projects/padel-tournament',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/projects/askyourpages': typeof ProjectsAskyourpagesRoute
+  '/projects/padel-tournament': typeof ProjectsPadelTournamentRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/projects/askyourpages': typeof ProjectsAskyourpagesRoute
+  '/projects/padel-tournament': typeof ProjectsPadelTournamentRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/projects/askyourpages': typeof ProjectsAskyourpagesRoute
+  '/projects/padel-tournament': typeof ProjectsPadelTournamentRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/projects/askyourpages'
+  fullPaths: '/' | '/projects/askyourpages' | '/projects/padel-tournament'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/projects/askyourpages'
-  id: '__root__' | '/' | '/projects/askyourpages'
+  to: '/' | '/projects/askyourpages' | '/projects/padel-tournament'
+  id: '__root__' | '/' | '/projects/askyourpages' | '/projects/padel-tournament'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ProjectsAskyourpagesRoute: typeof ProjectsAskyourpagesRoute
+  ProjectsPadelTournamentRoute: typeof ProjectsPadelTournamentRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +75,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsAskyourpagesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects/padel-tournament': {
+      id: '/projects/padel-tournament'
+      path: '/projects/padel-tournament'
+      fullPath: '/projects/padel-tournament'
+      preLoaderRoute: typeof ProjectsPadelTournamentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ProjectsAskyourpagesRoute: ProjectsAskyourpagesRoute,
+  ProjectsPadelTournamentRoute: ProjectsPadelTournamentRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
