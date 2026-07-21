@@ -78,8 +78,8 @@ function ProjectCard({ p }: { p: (typeof projects)[0] }) {
             // @ts-ignore
             <LinkSlot internalUrl={p.internalUrl} icon={ArrowRight} label="View Project" />
           )}
-          <LinkSlot href={p.githubUrl} icon={Github} label="GitHub" />
           <LinkSlot href={p.liveUrl} icon={ExternalLink} label="Live Demo" />
+          <LinkSlot href={p.githubUrl} icon={Github} label="GitHub" />
         </div>
       </CardContent>
     </Card>

@@ -76,7 +76,7 @@ export const projects = [
     description: "0-to-1 platform for managing padel tournaments, brackets, scheduling, and results.",
     tags: ["TypeScript", "React", "Vite", "Tailwind", "MUI", "Python/FastAPI", "SQLAlchemy", "MySQL", "Firebase Hosting", "GitHub Actions"],
     githubUrl: null,
-    liveUrl: null,
+    liveUrl: "https://lake-city-cpt.web.app/",
     internalUrl: "/projects/padel-tournament",
   },
   {
