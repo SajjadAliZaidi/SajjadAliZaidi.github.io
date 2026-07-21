@@ -11,8 +11,10 @@ export default defineConfig({
         enabled: true,
         prerender: {
           enabled: true,
+          crawlLinks: true,
         },
       },
+      pages: [{ path: "/" }, { path: "/projects/askyourpages" }],
     }),
     tsconfigPaths(),
     react(),

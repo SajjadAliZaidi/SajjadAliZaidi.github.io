@@ -13,18 +13,7 @@ import { profile } from "@/data/portfolio";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: `${profile.name} — ${profile.title}` },
-      {
-        name: "description",
-        content:
-          "Portfolio of a Senior Full-Stack Software Engineer specializing in applied AI/GenAI systems: RAG, multi-agent orchestration, and AWS Bedrock.",
-      },
-      { property: "og:title", content: `${profile.name} — ${profile.title}` },
-      {
-        property: "og:description",
-        content:
-          "Applied AI/GenAI systems engineer, RAG, multi-agent orchestration, AWS Bedrock, and full-stack platforms.",
-      },
+      { title: "Sajjad Ali Zaidi | Senior Full-Stack Engineer, AI/GenAI Systems" },
     ],
   }),
   component: Portfolio,

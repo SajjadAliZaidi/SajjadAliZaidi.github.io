@@ -73,8 +73,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      
+      { title: "Sajjad Ali Zaidi | Senior Full-Stack Engineer, AI/GenAI Systems" },
+      { name: "description", content: "Portfolio of Sajjad Ali Zaidi, a Senior Full-Stack Software Engineer specializing in applied AI/GenAI systems — RAG pipelines, multi-agent orchestration, and production-grade web platforms." },
+      
       { property: "og:type", content: "website" },
+      { property: "og:title", content: "Sajjad Ali Zaidi | Senior Full-Stack Engineer, AI/GenAI Systems" },
+      { property: "og:description", content: "Full-stack engineer specializing in applied AI/GenAI systems — RAG pipelines, multi-agent orchestration, and production web platforms." },
+      { property: "og:url", content: "https://sajjadalizaidi.github.io" },
+      { property: "og:image", content: "https://sajjadalizaidi.github.io/og-image.png" },
+      
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Sajjad Ali Zaidi | Senior Full-Stack Engineer, AI/GenAI Systems" },
+      { name: "twitter:description", content: "Full-stack engineer specializing in applied AI/GenAI systems — RAG pipelines, multi-agent orchestration, and production web platforms." },
+      { name: "twitter:image", content: "https://sajjadalizaidi.github.io/og-image.png" },
     ],
     scripts: [
       {
@@ -83,7 +95,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.ico", sizes: "32x32" },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

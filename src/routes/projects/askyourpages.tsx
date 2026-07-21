@@ -3,8 +3,10 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/projects/askyourpages")({
   head: () => ({
     meta: [
-      { title: "AskYourPages - Coming Soon" },
-      { name: "description", content: "Ask your books anything. Get answers with page-level citations you can actually click through to." }
+      { title: "AskYourPages — Coming Soon | Sajjad Ali Zaidi" },
+      { name: "description", content: "Ask your books anything. Get answers with page-level citations you can actually click through to." },
+      { property: "og:title", content: "AskYourPages — Coming Soon | Sajjad Ali Zaidi" },
+      { name: "twitter:title", content: "AskYourPages — Coming Soon | Sajjad Ali Zaidi" }
     ]
   }),
   component: AskYourPages,
