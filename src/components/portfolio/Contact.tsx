@@ -4,16 +4,15 @@ import { profile } from "@/data/portfolio";
 
 const items = [
   { href: `mailto:${profile.email}`, icon: Mail, label: "Email", value: profile.email },
-  { href: profile.linkedin, icon: Linkedin, label: "LinkedIn", value: "linkedin.com" },
-  { href: profile.github, icon: Github, label: "GitHub", value: "github.com" },
+  { href: profile.linkedin.value, icon: Linkedin, label: "LinkedIn", value: profile.linkedin.label },
+  { href: profile.github.value, icon: Github, label: "GitHub", value: profile.github.label },
 ];
 
 export function Contact() {
   return (
     <Section id="contact" label="contact" title="Get in touch">
       <p className="max-w-2xl text-base leading-relaxed text-muted-foreground">
-        Open to collaboration on applied AI, GenAI platforms, and full-stack product work.
-        The fastest way to reach me is email.
+        Open to new opportunities — reach out directly, no forms required.
       </p>
       <div className="mt-8 grid gap-3 sm:grid-cols-3">
         {items.map((it) => (

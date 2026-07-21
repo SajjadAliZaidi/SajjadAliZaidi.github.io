@@ -1,4 +1,6 @@
-import type { ReactNode } from "react";
+import { type ReactNode } from "react";
+import { motion } from "framer-motion";
+import { useIsMounted } from "../../hooks/use-is-mounted";
 
 export function Section({
   id,
@@ -11,6 +13,8 @@ export function Section({
   title: string;
   children: ReactNode;
 }) {
+  const isMounted = useIsMounted();
+
   return (
     <section id={id} className="scroll-mt-20 border-b border-border py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -22,7 +26,18 @@ export function Section({
             {title}
           </h2>
         </div>
-        {children}
+        {isMounted ? (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5 }}
+          >
+            {children}
+          </motion.div>
+        ) : (
+          <div>{children}</div>
+        )}
       </div>
     </section>
   );

@@ -36,55 +36,58 @@
 /* Light mode */
 :root {
   --radius: 0.625rem;
-  --background: oklch(0.985 0 0);          /* #fafafa */
-  --surface: oklch(1 0 0);                 /* #ffffff */
-  --foreground: oklch(0.205 0.005 285);    /* #18181b */
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.205 0.005 285);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.205 0.005 285);
-  --primary: oklch(0.623 0.187 259.8);     /* #3b82f6 */
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.96 0.005 285);
-  --secondary-foreground: oklch(0.205 0.005 285);
-  --muted: oklch(0.96 0.005 285);
-  --muted-foreground: oklch(0.55 0.01 285); /* muted text */
-  --accent: oklch(0.623 0.187 259.8);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.9 0.005 285);
-  --input: oklch(0.9 0.005 285);
-  --ring: oklch(0.623 0.187 259.8);
+  --background: #fafafa;
+  --surface: #ffffff;
+  --foreground: #18181b;
+  --card: #ffffff;
+  --card-foreground: #18181b;
+  --popover: #ffffff;
+  --popover-foreground: #18181b;
+  --primary: #3b82f6;
+  --primary-foreground: #fafafa;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+  --muted: #f4f4f5;
+  --muted-foreground: #8b8b96;
+  --accent: #3b82f6;
+  --accent-foreground: #fafafa;
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+  --border: #26262f;
+  --input: #e4e4e7;
+  --ring: #3b82f6;
 }
 
 /* Dark mode (default preferred) */
 .dark {
-  --background: oklch(0.15 0.01 275);      /* ~#0a0a0f */
-  --surface: oklch(0.2 0.015 275);         /* ~#14141c */
-  --foreground: oklch(0.9 0.005 285);      /* #e4e4e7 */
-  --card: oklch(0.2 0.015 275);
-  --card-foreground: oklch(0.9 0.005 285);
-  --popover: oklch(0.2 0.015 275);
-  --popover-foreground: oklch(0.9 0.005 285);
-  --primary: oklch(0.623 0.187 259.8);     /* #3b82f6 */
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.25 0.015 275);
-  --secondary-foreground: oklch(0.9 0.005 285);
-  --muted: oklch(0.25 0.015 275);
-  --muted-foreground: oklch(0.62 0.01 285); /* #8b8b96 */
-  --accent: oklch(0.72 0.15 259.8);         /* hover #60a5fa */
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.28 0.015 275);          /* #26262f */
-  --input: oklch(0.28 0.015 275);
-  --ring: oklch(0.623 0.187 259.8);
+  --background: #0a0a0f;
+  --surface: #14141c;
+  --foreground: #e4e4e7;
+  --card: #14141c;
+  --card-foreground: #e4e4e7;
+  --popover: #14141c;
+  --popover-foreground: #e4e4e7;
+  --primary: #3b82f6;
+  --primary-foreground: #0a0a0f;
+  --secondary: #27272a;
+  --secondary-foreground: #e4e4e7;
+  --muted: #27272a;
+  --muted-foreground: #8b8b96;
+  --accent: #3b82f6;
+  --accent-foreground: #0a0a0f;
+  --destructive: #ef4444;
+  --destructive-foreground: #0a0a0f;
+  --border: #26262f;
+  --input: #26262f;
+  --ring: #3b82f6;
 }
 
 @layer base {
   * {
     border-color: var(--color-border);
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
   }
   html {
     scroll-behavior: smooth;

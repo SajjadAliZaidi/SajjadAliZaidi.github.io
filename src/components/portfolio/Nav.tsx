@@ -24,9 +24,10 @@ export function Nav() {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="group relative text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               {l.label}
+              <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-primary transition-all duration-300 ease-out group-hover:w-full"></span>
             </a>
           ))}
         </nav>

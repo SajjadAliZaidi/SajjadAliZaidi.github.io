@@ -2,14 +2,16 @@ import { ExternalLink, Github } from "lucide-react";
 import { Section } from "./Section";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { projects, type Project } from "@/data/portfolio";
+import { projects } from "@/data/portfolio";
+import { motion } from "framer-motion";
+import { useIsMounted } from "../../hooks/use-is-mounted";
 
 function LinkSlot({
   href,
   icon: Icon,
   label,
 }: {
-  href?: string;
+  href?: string | null;
   icon: typeof Github;
   label: string;
 }) {
@@ -34,16 +36,18 @@ function LinkSlot({
   );
 }
 
-function ProjectCard({ p }: { p: Project }) {
-  return (
-    <Card className="bg-card transition-colors hover:border-primary/40">
+function ProjectCard({ p }: { p: (typeof projects)[0] }) {
+  const isMounted = useIsMounted();
+
+  const cardContent = (
+    <Card className="bg-card h-full transition-colors group-hover:border-primary">
       <CardContent className="flex h-full flex-col p-6">
         <h3 className="text-lg font-semibold">{p.title}</h3>
         <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
           {p.description}
         </p>
         <div className="mt-4 flex flex-wrap gap-1.5">
-          {p.tech.map((t) => (
+          {p.tags.map((t) => (
             <Badge
               key={t}
               variant="outline"
@@ -54,17 +58,34 @@ function ProjectCard({ p }: { p: Project }) {
           ))}
         </div>
         <div className="mt-5 flex flex-wrap gap-2">
-          <LinkSlot href={p.github} icon={Github} label="GitHub" />
-          <LinkSlot href={p.demo} icon={ExternalLink} label="Live Demo" />
+          <LinkSlot href={p.githubUrl} icon={Github} label="GitHub" />
+          <LinkSlot href={p.liveUrl} icon={ExternalLink} label="Live Demo" />
         </div>
       </CardContent>
     </Card>
   );
+
+  if (isMounted) {
+    return (
+      <motion.div
+        whileHover={{ scale: 1.02 }}
+        transition={{ duration: 0.2 }}
+        className="group h-full"
+      >
+        {cardContent}
+      </motion.div>
+    );
+  }
+
+  return <div className="group h-full">{cardContent}</div>;
 }
 
 export function Projects() {
   return (
     <Section id="projects" label="projects" title="Selected Projects">
+      <p className="mb-8 text-base text-muted-foreground">
+        A mix of production systems and 0-to-1 builds — some solving real business problems, some solving problems I made up for myself.
+      </p>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
         {projects.map((p) => (
           <ProjectCard key={p.title} p={p} />
