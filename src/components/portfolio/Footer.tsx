@@ -8,7 +8,7 @@ export function Footer() {
           © {new Date().getFullYear()} {profile.name}. All rights reserved.
         </p>
         <p className="font-mono text-xs text-muted-foreground">
-          Built with React, TanStack Start, and probably too much coffee.
+          Built with React, TanStack Start, and no ☕️
         </p>
       </div>
     </footer>
