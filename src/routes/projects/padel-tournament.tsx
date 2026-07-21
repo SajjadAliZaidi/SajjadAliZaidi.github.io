@@ -12,7 +12,7 @@ export const Route = createFileRoute("/projects/padel-tournament")({
       {
         name: "description",
         content:
-          "End-to-end padel tournament management platform — bracket generation, match scheduling, live score tracking, and results. Built from 0 to 1 at Exper Labs.",
+          "End-to-end padel tournament management platform having bracket generation, match scheduling, live score tracking, and results. Built from 0 to 1 at Exper Labs.",
       },
       { property: "og:title", content: "Padel Tournament Platform | Sajjad Ali Zaidi" },
       { name: "twitter:title", content: "Padel Tournament Platform | Sajjad Ali Zaidi" },
@@ -54,7 +54,7 @@ function PadelTournament() {
             </h1>
 
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-              An end-to-end platform for running padel tournaments — brackets,
+              An end-to-end platform for running padel tournaments with brackets,
               scheduling, and results, built as a 0-to-1 project at Exper Labs.
             </p>
 
@@ -84,8 +84,8 @@ function PadelTournament() {
             </h2>
             <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
               Built from the ground up to handle the full lifecycle of a padel
-              tournament — bracket generation, match scheduling, live score
-              tracking, and results — replacing what used to be a manual,
+              tournament with bracket generation, match scheduling, live score
+              tracking, and results, replacing what used to be a manual,
               spreadsheet-driven process.
             </p>
 
@@ -101,6 +101,37 @@ function PadelTournament() {
                 </span>{" "}
                 pipeline for internal testing before each release.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Screenshots ── */}
+        <section className="border-b border-border py-16 sm:py-20">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6">
+            <p className="font-mono text-xs uppercase tracking-widest text-primary">
+              // screenshots
+            </p>
+            <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
+              In action
+            </h2>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {[1, 2, 3, 4].map((n) => (
+                <a
+                  key={n}
+                  href={`/assets/screenshots/padel_app/screenshot_${n}.png`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block overflow-hidden rounded-lg border border-border transition-colors hover:border-primary"
+                >
+                  <img
+                    src={`/assets/screenshots/padel_app/screenshot_${n}.png`}
+                    alt={`Padel Tournament Platform screenshot ${n}`}
+                    className="w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                    loading="lazy"
+                  />
+                </a>
+              ))}
             </div>
           </div>
         </section>
@@ -151,37 +182,6 @@ function PadelTournament() {
                   ))}
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Screenshots ── */}
-        <section className="border-b border-border py-16 sm:py-20">
-          <div className="mx-auto max-w-4xl px-4 sm:px-6">
-            <p className="font-mono text-xs uppercase tracking-widest text-primary">
-              // screenshots
-            </p>
-            <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
-              In action
-            </h2>
-
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {[1, 2, 3, 4].map((n) => (
-                <a
-                  key={n}
-                  href={`/assets/screenshots/padel_app/screenshot_${n}.png`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group block overflow-hidden rounded-lg border border-border transition-colors hover:border-primary"
-                >
-                  <img
-                    src={`/assets/screenshots/padel_app/screenshot_${n}.png`}
-                    alt={`Padel Tournament Platform — screenshot ${n}`}
-                    className="w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-                    loading="lazy"
-                  />
-                </a>
-              ))}
             </div>
           </div>
         </section>

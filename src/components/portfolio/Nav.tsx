@@ -53,7 +53,8 @@ export function Nav() {
               Resume
             </a>
           </Button>
-          <ThemeToggle />
+          {/* Hide theme toggle for now */}
+          {/* <ThemeToggle /> */}
         </div>
       </div>
     </header>

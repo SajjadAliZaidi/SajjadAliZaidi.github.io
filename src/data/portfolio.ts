@@ -58,6 +58,14 @@ export const projects = [
     internalUrl: "/projects/askyourpages",
   },
   {
+    title: "Padel Tournament Platform",
+    description: "0-to-1 platform for managing padel tournaments, brackets, scheduling, and results.",
+    tags: ["TypeScript", "React", "Vite", "Tailwind", "MUI", "Python/FastAPI", "SQLAlchemy", "MySQL", "Firebase Hosting", "GitHub Actions"],
+    githubUrl: null,
+    liveUrl: "https://lake-city-cpt.web.app/",
+    internalUrl: "/projects/padel-tournament",
+  },
+  {
     title: "Booking Automation System",
     description: "Fixed race conditions in a reservation platform's automation engine, raising success rate from ~65% to 90%+ by redesigning the retry and state-reconciliation logic.",
     tags: ["Ruby on Rails", "React"],
@@ -70,14 +78,6 @@ export const projects = [
     tags: ["TypeScript", "Next.js", "Supabase", "Vercel"],
     githubUrl: null,
     liveUrl: null,
-  },
-  {
-    title: "Padel Tournament Platform",
-    description: "0-to-1 platform for managing padel tournaments, brackets, scheduling, and results.",
-    tags: ["TypeScript", "React", "Vite", "Tailwind", "MUI", "Python/FastAPI", "SQLAlchemy", "MySQL", "Firebase Hosting", "GitHub Actions"],
-    githubUrl: null,
-    liveUrl: "https://lake-city-cpt.web.app/",
-    internalUrl: "/projects/padel-tournament",
   },
   {
     title: "Content Moderation Extension",
