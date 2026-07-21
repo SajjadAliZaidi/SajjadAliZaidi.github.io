@@ -4,14 +4,14 @@ export const profile = {
   name: "Sajjad Ali Zaidi",
   title: "Senior Full-Stack Software Engineer | AI/GenAI Systems",
   tagline:
-    "I build production web platforms — and increasingly, the AI systems that run inside them.",
+    "I build production web platforms, and increasingly, the AI systems that run inside them.",
   email: "sajjadalizaidi00@gmail.com",
   linkedin: { label: "linkedin.com/in/syedmuhammadsajjad", value: "https://www.linkedin.com/in/syedmuhammadsajjad" },
   github: { label: "github.com/sajjadalizaidi", value: "https://github.com/sajjadalizaidi" },
   resumeUrl: "/Sajjad_Zaidi_Resume_AI_GenAI.pdf",
 };
 
-export const about = `I'm a full-stack engineer with 5+ years of experience shipping production platforms, now focused on applied AI — RAG pipelines, multi-agent orchestration, and Bedrock-based systems that actually go into production rather than staying a demo.
+export const about = `I'm a full-stack engineer with 5+ years of experience shipping production platforms, now focused on applied AI, RAG pipelines, multi-agent orchestration, and Bedrock-based systems that actually go into production rather than staying a demo.
 
 My foundation is full-stack: React and TypeScript on the frontend, Ruby on Rails, Node.js, and Java Spring Boot on the backend, PostgreSQL and Redis underneath. That foundation is what lets me take an AI feature from "cool idea" to something that survives real traffic, real edge cases, and real users.
 
@@ -73,7 +73,7 @@ export const projects = [
   },
   {
     title: "Padel Tournament Platform",
-    description: "0-to-1 platform for managing padel tournaments — brackets, scheduling, and results.",
+    description: "0-to-1 platform for managing padel tournaments, brackets, scheduling, and results.",
     tags: ["TypeScript", "React", "Vite", "Tailwind", "MUI", "Python/FastAPI", "SQLAlchemy", "MySQL", "Firebase Hosting", "GitHub Actions"],
     githubUrl: null,
     liveUrl: null,

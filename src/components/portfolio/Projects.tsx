@@ -104,7 +104,7 @@ export function Projects() {
   return (
     <Section id="projects" label="projects" title="Selected Projects">
       <p className="mb-8 text-base text-muted-foreground">
-        A mix of production systems and 0-to-1 builds — some solving real business problems, some solving problems I made up for myself.
+        A mix of production systems and 0-to-1 builds. Some solving real business problems, some solving problems I made up for myself.
       </p>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
         {projects.map((p) => (

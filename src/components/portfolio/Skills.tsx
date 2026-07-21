@@ -26,7 +26,7 @@ export function Skills() {
   return (
     <Section id="skills" label="skills" title="Skills">
       <p className="mb-8 text-base text-muted-foreground">
-        The stack I build with — from frontend to cloud AI infrastructure.
+        The stack I build with, from frontend to cloud AI infrastructure.
       </p>
       <div className="grid gap-4 sm:grid-cols-2">
         {skills.map((group) => {

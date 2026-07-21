@@ -12,7 +12,7 @@ export function Contact() {
   return (
     <Section id="contact" label="contact" title="Get in touch">
       <p className="max-w-2xl text-base leading-relaxed text-muted-foreground">
-        Open to new opportunities — reach out directly, no forms required.
+        Open to new opportunities. Reach out directly, no forms required.
       </p>
       <div className="mt-8 grid gap-3 sm:grid-cols-3">
         {items.map((it) => (

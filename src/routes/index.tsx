@@ -23,7 +23,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Applied AI/GenAI systems engineer — RAG, multi-agent orchestration, AWS Bedrock, and full-stack platforms.",
+          "Applied AI/GenAI systems engineer, RAG, multi-agent orchestration, AWS Bedrock, and full-stack platforms.",
       },
     ],
   }),
