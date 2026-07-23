@@ -58,6 +58,14 @@ export const projects = [
     internalUrl: "/projects/askyourpages",
   },
   {
+    title: "PeekLinked",
+    description: "A browser extension that blurs LinkedIn images and videos by default, letting you reveal them on your own terms.",
+    tags: ["Chrome Extension", "JavaScript", "Browser APIs"],
+    githubUrl: "https://github.com/SajjadAliZaidi/peeklinked",
+    liveUrl: null,
+    internalUrl: "/projects/peeklinked",
+  },
+  {
     title: "Padel Tournament Platform",
     description: "0-to-1 platform for managing padel tournaments, brackets, scheduling, and results.",
     tags: ["TypeScript", "React", "Vite", "Tailwind", "MUI", "Python/FastAPI", "SQLAlchemy", "MySQL", "Firebase Hosting", "GitHub Actions"],
