@@ -69,6 +69,23 @@ function PeekLinked() {
           </div>
         </section>
 
+        {/* ── Screenshots ── */}
+        <section className="border-b border-border py-16 sm:py-20">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6">
+            <p className="font-mono text-xs uppercase tracking-widest text-primary">
+              // screenshots
+            </p>
+            <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
+              In action
+            </h2>
+
+            <ScreenshotGallery
+              images={import.meta.glob('/public/assets/screenshots/peeklinked/*.png', { eager: true })}
+              altPrefix="PeekLinked"
+            />
+          </div>
+        </section>
+
         {/* ── Overview ── */}
         <section className="border-b border-border py-16 sm:py-20">
           <div className="mx-auto max-w-4xl px-4 sm:px-6">
@@ -148,23 +165,6 @@ function PeekLinked() {
               all interactive controls in a separate overlay layer, fully decoupled from LinkedIn's
               own React tree.
             </p>
-          </div>
-        </section>
-
-        {/* ── Screenshots ── */}
-        <section className="border-b border-border py-16 sm:py-20">
-          <div className="mx-auto max-w-4xl px-4 sm:px-6">
-            <p className="font-mono text-xs uppercase tracking-widest text-primary">
-              // screenshots
-            </p>
-            <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
-              In action
-            </h2>
-
-            <ScreenshotGallery 
-              images={import.meta.glob('/public/assets/screenshots/peeklinked/*.png', { eager: true })} 
-              altPrefix="PeekLinked" 
-            />
           </div>
         </section>
 
