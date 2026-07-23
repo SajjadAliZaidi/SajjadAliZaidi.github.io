@@ -78,8 +78,8 @@ function PeekLinked() {
               What it does
             </h2>
             <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              A Chrome/Edge extension that blurs LinkedIn profile pictures, post images, and videos 
-              by default, overlaying a small toggle on each so you can reveal them on demand — a 
+              A Chrome/Edge extension that blurs LinkedIn profile pictures, post images, and videos
+              by default, overlaying a small toggle on each so you can reveal them on demand — a
               small nudge against the endless-scroll pull of a feed built to keep you looking.
             </p>
 
@@ -104,7 +104,7 @@ function PeekLinked() {
             <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
               Key Features
             </h2>
-            
+
             <ul className="mt-8 space-y-4 text-base text-muted-foreground sm:text-lg">
               <li className="flex items-start gap-3">
                 <span className="mt-1 flex h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
@@ -140,11 +140,11 @@ function PeekLinked() {
               Technical Highlight
             </h2>
             <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Built without ever mutating LinkedIn's own DOM. LinkedIn is a React app, and directly 
-              inserting or moving elements inside its tree breaks React's reconciliation — an early 
-              version that wrapped image elements caused parts of the page to crash and unmount. The 
-              current architecture applies blur via inline styles on the existing elements and keeps 
-              all interactive controls in a separate overlay layer, fully decoupled from LinkedIn's 
+              Built without ever mutating LinkedIn's own DOM. LinkedIn is a React app, and directly
+              inserting or moving elements inside its tree breaks React's reconciliation — an early
+              version that wrapped image elements caused parts of the page to crash and unmount. The
+              current architecture applies blur via inline styles on the existing elements and keeps
+              all interactive controls in a separate overlay layer, fully decoupled from LinkedIn's
               own React tree.
             </p>
           </div>
@@ -160,14 +160,14 @@ function PeekLinked() {
               In action
             </h2>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {[1, 2, 3, 4].map((n) => (
+            <div className="mt-8 columns-1 sm:columns-3 gap-4 space-y-4">
+              {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
                 <a
                   key={n}
                   href={`/assets/screenshots/peeklinked/screenshot_${n}.png`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block overflow-hidden rounded-lg border border-border transition-colors hover:border-primary"
+                  className="group block break-inside-avoid overflow-hidden rounded-lg border border-border transition-all duration-300 hover:border-primary hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]"
                 >
                   <img
                     src={`/assets/screenshots/peeklinked/screenshot_${n}.png`}

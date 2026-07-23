@@ -115,14 +115,14 @@ function PadelTournament() {
               In action
             </h2>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className="mt-8 columns-1 sm:columns-3 gap-4 space-y-4">
               {[1, 2, 3, 4].map((n) => (
                 <a
                   key={n}
                   href={`/assets/screenshots/padel_app/screenshot_${n}.png`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block overflow-hidden rounded-lg border border-border transition-colors hover:border-primary"
+                  className="group block break-inside-avoid overflow-hidden rounded-lg border border-border transition-all duration-300 hover:border-primary hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]"
                 >
                   <img
                     src={`/assets/screenshots/padel_app/screenshot_${n}.png`}
