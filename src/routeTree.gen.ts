@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProjectsAskyourpagesRouteImport } from './routes/projects/askyourpages'
 import { Route as ProjectsPadelTournamentRouteImport } from './routes/projects/padel-tournament'
+import { Route as ProjectsPeeklinkedRouteImport } from './routes/projects/peeklinked'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -28,35 +29,57 @@ const ProjectsPadelTournamentRoute = ProjectsPadelTournamentRouteImport.update({
   path: '/projects/padel-tournament',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectsPeeklinkedRoute = ProjectsPeeklinkedRouteImport.update({
+  id: '/projects/peeklinked',
+  path: '/projects/peeklinked',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/projects/askyourpages': typeof ProjectsAskyourpagesRoute
   '/projects/padel-tournament': typeof ProjectsPadelTournamentRoute
+  '/projects/peeklinked': typeof ProjectsPeeklinkedRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/projects/askyourpages': typeof ProjectsAskyourpagesRoute
   '/projects/padel-tournament': typeof ProjectsPadelTournamentRoute
+  '/projects/peeklinked': typeof ProjectsPeeklinkedRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/projects/askyourpages': typeof ProjectsAskyourpagesRoute
   '/projects/padel-tournament': typeof ProjectsPadelTournamentRoute
+  '/projects/peeklinked': typeof ProjectsPeeklinkedRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/projects/askyourpages' | '/projects/padel-tournament'
+  fullPaths:
+    | '/'
+    | '/projects/askyourpages'
+    | '/projects/padel-tournament'
+    | '/projects/peeklinked'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/projects/askyourpages' | '/projects/padel-tournament'
-  id: '__root__' | '/' | '/projects/askyourpages' | '/projects/padel-tournament'
+  to:
+    | '/'
+    | '/projects/askyourpages'
+    | '/projects/padel-tournament'
+    | '/projects/peeklinked'
+  id:
+    | '__root__'
+    | '/'
+    | '/projects/askyourpages'
+    | '/projects/padel-tournament'
+    | '/projects/peeklinked'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ProjectsAskyourpagesRoute: typeof ProjectsAskyourpagesRoute
   ProjectsPadelTournamentRoute: typeof ProjectsPadelTournamentRoute
+  ProjectsPeeklinkedRoute: typeof ProjectsPeeklinkedRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -82,6 +105,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsPadelTournamentRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects/peeklinked': {
+      id: '/projects/peeklinked'
+      path: '/projects/peeklinked'
+      fullPath: '/projects/peeklinked'
+      preLoaderRoute: typeof ProjectsPeeklinkedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -89,6 +119,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ProjectsAskyourpagesRoute: ProjectsAskyourpagesRoute,
   ProjectsPadelTournamentRoute: ProjectsPadelTournamentRoute,
+  ProjectsPeeklinkedRoute: ProjectsPeeklinkedRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

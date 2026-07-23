@@ -1,31 +1,28 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/portfolio/Nav";
 import { Footer } from "@/components/portfolio/Footer";
-import { ExternalLink, ArrowLeft, ImageIcon } from "lucide-react";
+import { ExternalLink, ArrowLeft, ImageIcon, Github } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ScreenshotGallery } from "@/components/portfolio/ScreenshotGallery";
 
-export const Route = createFileRoute("/projects/padel-tournament")({
+export const Route = createFileRoute("/projects/peeklinked")({
   head: () => ({
     meta: [
-      { title: "Padel Tournament Platform | Sajjad Ali Zaidi" },
+      { title: "PeekLinked | Sajjad Ali Zaidi" },
       {
         name: "description",
         content:
-          "End-to-end padel tournament management platform having bracket generation, match scheduling, live score tracking, and results. Built from 0 to 1 at Exper Labs.",
+          "A browser extension that blurs LinkedIn images and videos by default, letting you reveal them on your own terms.",
       },
-      { property: "og:title", content: "Padel Tournament Platform | Sajjad Ali Zaidi" },
-      { name: "twitter:title", content: "Padel Tournament Platform | Sajjad Ali Zaidi" },
+      { property: "og:title", content: "PeekLinked | Sajjad Ali Zaidi" },
+      { name: "twitter:title", content: "PeekLinked | Sajjad Ali Zaidi" },
     ],
   }),
-  component: PadelTournament,
+  component: PeekLinked,
 });
 
-const frontendStack = ["React", "TypeScript", "Vite", "Tailwind CSS", "MUI"];
-const infraStack = ["Firebase Hosting", "GitHub Actions (CI/CD)"];
-
-function PadelTournament() {
+function PeekLinked() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       <Nav />
@@ -50,24 +47,22 @@ function PadelTournament() {
             </p>
 
             <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-              Padel Tournament{" "}
-              <span className="text-primary">Management Platform</span>
+              PeekLinked
             </h1>
 
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-              An end-to-end platform for running padel tournaments with brackets,
-              scheduling, and results, built as a 0-to-1 project at Exper Labs.
+              Give your attention back. Peek when you're ready.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Button asChild size="lg">
                 <a
-                  href="https://lake-city-cpt.web.app/"
+                  href="https://github.com/SajjadAliZaidi/peeklinked"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  View Live App
+                  <Github className="mr-2 h-4 w-4" />
+                  View on GitHub
                 </a>
               </Button>
             </div>
@@ -85,8 +80,8 @@ function PadelTournament() {
             </h2>
 
             <ScreenshotGallery
-              images={import.meta.glob('/public/assets/screenshots/padel_app/*.png', { eager: true })}
-              altPrefix="Padel Tournament Platform"
+              images={import.meta.glob('/public/assets/screenshots/peeklinked/*.png', { eager: true })}
+              altPrefix="PeekLinked"
             />
           </div>
         </section>
@@ -101,75 +96,75 @@ function PadelTournament() {
               What it does
             </h2>
             <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Built from the ground up to handle the full lifecycle of a padel
-              tournament with bracket generation, match scheduling, live score
-              tracking, and results, replacing what used to be a manual,
-              spreadsheet-driven process.
+              A Chrome/Edge extension that blurs LinkedIn profile pictures, post images, and videos
+              by default, overlaying a small toggle on each so you can reveal them on demand — a
+              small nudge against the endless-scroll pull of a feed built to keep you looking.
             </p>
 
-            {/* Pipeline note */}
             <div className="mt-8 inline-flex items-start gap-3 rounded-lg border border-border bg-card px-5 py-4">
               <span className="mt-0.5 font-mono text-xs text-primary select-none">
                 {">"}
               </span>
               <p className="font-mono text-sm text-muted-foreground">
-                Built and shipped with a full{" "}
-                <span className="text-foreground font-medium">
-                  staging / UAT / production
-                </span>{" "}
-                pipeline for internal testing before each release.
+                <strong className="text-foreground font-medium">Status: </strong>
+                In Development — Chrome Web Store submission in progress
               </p>
             </div>
           </div>
         </section>
 
-        {/* ── Tech Stack ── */}
+        {/* ── Features ── */}
         <section className="border-b border-border py-16 sm:py-20">
           <div className="mx-auto max-w-4xl px-4 sm:px-6">
             <p className="font-mono text-xs uppercase tracking-widest text-primary">
-              // tech stack
+              // features
             </p>
             <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
-              Built with
+              Key Features
             </h2>
 
-            <div className="mt-8 grid gap-6 sm:grid-cols-2">
-              {/* Frontend */}
-              <div className="rounded-lg border border-border bg-card p-6">
-                <p className="font-mono text-xs uppercase tracking-widest text-primary mb-4">
-                  Frontend
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {frontendStack.map((tech) => (
-                    <Badge
-                      key={tech}
-                      variant="outline"
-                      className="rounded font-mono text-[11px] uppercase tracking-wider"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
+            <ul className="mt-8 space-y-4 text-base text-muted-foreground sm:text-lg">
+              <li className="flex items-start gap-3">
+                <span className="mt-1 flex h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                <span>Master on/off switch</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-1 flex h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                <span>Per-tab pause with a keyboard shortcut</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-1 flex h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                <span>Adjustable blur intensity (5 presets)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-1 flex h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                <span>Independent controls per content type (profile pictures / post images / videos)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-1 flex h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                <span>Bulk show/hide all on page</span>
+              </li>
+            </ul>
+          </div>
+        </section>
 
-              {/* Infra */}
-              <div className="rounded-lg border border-border bg-card p-6">
-                <p className="font-mono text-xs uppercase tracking-widest text-primary mb-4">
-                  Infrastructure
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {infraStack.map((tech) => (
-                    <Badge
-                      key={tech}
-                      variant="outline"
-                      className="rounded font-mono text-[11px] uppercase tracking-wider"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            </div>
+        {/* ── Architecture Note ── */}
+        <section className="border-b border-border py-16 sm:py-20">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6">
+            <p className="font-mono text-xs uppercase tracking-widest text-primary">
+              // engineering
+            </p>
+            <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
+              Technical Highlight
+            </h2>
+            <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+              Built without ever mutating LinkedIn's own DOM. LinkedIn is a React app, and directly
+              inserting or moving elements inside its tree breaks React's reconciliation — an early
+              version that wrapped image elements caused parts of the page to crash and unmount. The
+              current architecture applies blur via inline styles on the existing elements and keeps
+              all interactive controls in a separate overlay layer, fully decoupled from LinkedIn's
+              own React tree.
+            </p>
           </div>
         </section>
 
@@ -177,23 +172,20 @@ function PadelTournament() {
         <section className="py-16 sm:py-20">
           <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
             <p className="font-mono text-xs uppercase tracking-widest text-primary">
-              // live
+              // source
             </p>
             <h2 className="mt-2 text-2xl font-semibold tracking-tight">
-              See it for yourself
+              Check out the code
             </h2>
-            <p className="mt-3 text-base text-muted-foreground">
-              The app is live in production and actively used for real tournaments.
-            </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <Button asChild size="lg">
                 <a
-                  href="https://lake-city-cpt.web.app/"
+                  href="https://github.com/SajjadAliZaidi/peeklinked"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  Open Live App
+                  <Github className="mr-2 h-4 w-4" />
+                  View on GitHub
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg">
