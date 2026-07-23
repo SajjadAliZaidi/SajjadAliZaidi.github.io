@@ -53,7 +53,7 @@ export function ScreenshotGallery({ images, altPrefix }: ScreenshotGalleryProps)
 
   return (
     <>
-      <div className="mt-8 columns-1 sm:columns-3 gap-4 space-y-4">
+      <div className="mt-8 columns-2 sm:columns-3 gap-4 space-y-4">
         {imageUrls.map((url, idx) => {
           const n = url.split("_").pop()?.split(".")[0] || url;
           return (
@@ -79,7 +79,7 @@ export function ScreenshotGallery({ images, altPrefix }: ScreenshotGalleryProps)
             className="absolute inset-0"
             onClick={handleClose}
           />
-          
+
           <Button
             variant="ghost"
             size="icon"
