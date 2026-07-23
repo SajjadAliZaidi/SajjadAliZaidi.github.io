@@ -4,6 +4,7 @@ import { Footer } from "@/components/portfolio/Footer";
 import { ExternalLink, ArrowLeft, ImageIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ScreenshotGallery } from "@/components/portfolio/ScreenshotGallery";
 
 export const Route = createFileRoute("/projects/padel-tournament")({
   head: () => ({
@@ -115,24 +116,10 @@ function PadelTournament() {
               In action
             </h2>
 
-            <div className="mt-8 columns-1 sm:columns-3 gap-4 space-y-4">
-              {[1, 2, 3, 4].map((n) => (
-                <a
-                  key={n}
-                  href={`/assets/screenshots/padel_app/screenshot_${n}.png`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group block break-inside-avoid overflow-hidden rounded-lg border border-border transition-all duration-300 hover:border-primary hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]"
-                >
-                  <img
-                    src={`/assets/screenshots/padel_app/screenshot_${n}.png`}
-                    alt={`Padel Tournament Platform screenshot ${n}`}
-                    className="w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-                    loading="lazy"
-                  />
-                </a>
-              ))}
-            </div>
+            <ScreenshotGallery 
+              images={import.meta.glob('/public/assets/screenshots/padel_app/*.png', { eager: true })} 
+              altPrefix="Padel Tournament Platform" 
+            />
           </div>
         </section>
 

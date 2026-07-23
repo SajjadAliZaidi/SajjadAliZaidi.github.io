@@ -4,6 +4,7 @@ import { Footer } from "@/components/portfolio/Footer";
 import { ExternalLink, ArrowLeft, ImageIcon, Github } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ScreenshotGallery } from "@/components/portfolio/ScreenshotGallery";
 
 export const Route = createFileRoute("/projects/peeklinked")({
   head: () => ({
@@ -160,29 +161,10 @@ function PeekLinked() {
               In action
             </h2>
 
-            <div className="mt-8 columns-1 sm:columns-3 gap-4 space-y-4">
-              {Object.keys(import.meta.glob('/public/assets/screenshots/peeklinked/*.png', { eager: true }))
-                .map((path) => {
-                  const url = path.replace('/public', '');
-                  const n = url.split('_').pop()?.split('.')[0] || url;
-                  return (
-                    <a
-                      key={url}
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group block break-inside-avoid overflow-hidden rounded-lg border border-border transition-all duration-300 hover:border-primary hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]"
-                    >
-                      <img
-                        src={url}
-                        alt={`PeekLinked screenshot ${n}`}
-                        className="w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-                        loading="lazy"
-                      />
-                    </a>
-                  );
-                })}
-            </div>
+            <ScreenshotGallery 
+              images={import.meta.glob('/public/assets/screenshots/peeklinked/*.png', { eager: true })} 
+              altPrefix="PeekLinked" 
+            />
           </div>
         </section>
 
