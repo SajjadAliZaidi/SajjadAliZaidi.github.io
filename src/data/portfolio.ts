@@ -54,7 +54,7 @@ export const projects = [
     description: "Full-stack RAG app that lets users upload PDF books and ask questions about them, getting AI answers with page-level citations.",
     tags: ["TypeScript", "React", "RAG"],
     githubUrl: null,
-    liveUrl: null,
+    liveUrl: "https://askyourpages.com/",
     internalUrl: "/projects/askyourpages",
   },
   {
