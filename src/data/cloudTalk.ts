@@ -3,7 +3,7 @@ export const cloudTalk = {
     title: "How to Become a Platform-Independent Cloud Engineer | Sajjad Ali Zaidi",
     description:
       "Slides, a multi-cloud cheat sheet (AWS, Azure, GCP) and free learning resources from Sajjad Ali Zaidi's guest lecture at FAST NUCES Lahore.",
-    url: "https://sajjadalizaidi.github.io/cloud-talk",
+    url: "https://sajjadalizaidi.github.io/cs-nuces-lhr-cloud-talk-2026",
   },
 
   header: {
