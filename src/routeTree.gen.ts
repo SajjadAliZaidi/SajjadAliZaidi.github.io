@@ -10,7 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as CloudTalkRouteImport } from './routes/cloud-talk'
+import { Route as CsNucesLhrCloudTalk2026RouteImport } from './routes/cs-nuces-lhr-cloud-talk-2026'
 import { Route as ProjectsAskyourpagesRouteImport } from './routes/projects/askyourpages'
 import { Route as ProjectsPadelTournamentRouteImport } from './routes/projects/padel-tournament'
 import { Route as ProjectsPeeklinkedRouteImport } from './routes/projects/peeklinked'
@@ -20,9 +20,9 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CloudTalkRoute = CloudTalkRouteImport.update({
-  id: '/cloud-talk',
-  path: '/cloud-talk',
+const CsNucesLhrCloudTalk2026Route = CsNucesLhrCloudTalk2026RouteImport.update({
+  id: '/cs-nuces-lhr-cloud-talk-2026',
+  path: '/cs-nuces-lhr-cloud-talk-2026',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProjectsAskyourpagesRoute = ProjectsAskyourpagesRouteImport.update({
@@ -43,14 +43,14 @@ const ProjectsPeeklinkedRoute = ProjectsPeeklinkedRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/cloud-talk': typeof CloudTalkRoute
+  '/cs-nuces-lhr-cloud-talk-2026': typeof CsNucesLhrCloudTalk2026Route
   '/projects/askyourpages': typeof ProjectsAskyourpagesRoute
   '/projects/padel-tournament': typeof ProjectsPadelTournamentRoute
   '/projects/peeklinked': typeof ProjectsPeeklinkedRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/cloud-talk': typeof CloudTalkRoute
+  '/cs-nuces-lhr-cloud-talk-2026': typeof CsNucesLhrCloudTalk2026Route
   '/projects/askyourpages': typeof ProjectsAskyourpagesRoute
   '/projects/padel-tournament': typeof ProjectsPadelTournamentRoute
   '/projects/peeklinked': typeof ProjectsPeeklinkedRoute
@@ -58,7 +58,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/cloud-talk': typeof CloudTalkRoute
+  '/cs-nuces-lhr-cloud-talk-2026': typeof CsNucesLhrCloudTalk2026Route
   '/projects/askyourpages': typeof ProjectsAskyourpagesRoute
   '/projects/padel-tournament': typeof ProjectsPadelTournamentRoute
   '/projects/peeklinked': typeof ProjectsPeeklinkedRoute
@@ -67,21 +67,21 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/cloud-talk'
+    | '/cs-nuces-lhr-cloud-talk-2026'
     | '/projects/askyourpages'
     | '/projects/padel-tournament'
     | '/projects/peeklinked'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/cloud-talk'
+    | '/cs-nuces-lhr-cloud-talk-2026'
     | '/projects/askyourpages'
     | '/projects/padel-tournament'
     | '/projects/peeklinked'
   id:
     | '__root__'
     | '/'
-    | '/cloud-talk'
+    | '/cs-nuces-lhr-cloud-talk-2026'
     | '/projects/askyourpages'
     | '/projects/padel-tournament'
     | '/projects/peeklinked'
@@ -89,7 +89,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  CloudTalkRoute: typeof CloudTalkRoute
+  CsNucesLhrCloudTalk2026Route: typeof CsNucesLhrCloudTalk2026Route
   ProjectsAskyourpagesRoute: typeof ProjectsAskyourpagesRoute
   ProjectsPadelTournamentRoute: typeof ProjectsPadelTournamentRoute
   ProjectsPeeklinkedRoute: typeof ProjectsPeeklinkedRoute
@@ -104,11 +104,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/cloud-talk': {
-      id: '/cloud-talk'
-      path: '/cloud-talk'
-      fullPath: '/cloud-talk'
-      preLoaderRoute: typeof CloudTalkRouteImport
+    '/cs-nuces-lhr-cloud-talk-2026': {
+      id: '/cs-nuces-lhr-cloud-talk-2026'
+      path: '/cs-nuces-lhr-cloud-talk-2026'
+      fullPath: '/cs-nuces-lhr-cloud-talk-2026'
+      preLoaderRoute: typeof CsNucesLhrCloudTalk2026RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/projects/askyourpages': {
@@ -137,7 +137,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  CloudTalkRoute: CloudTalkRoute,
+  CsNucesLhrCloudTalk2026Route: CsNucesLhrCloudTalk2026Route,
   ProjectsAskyourpagesRoute: ProjectsAskyourpagesRoute,
   ProjectsPadelTournamentRoute: ProjectsPadelTournamentRoute,
   ProjectsPeeklinkedRoute: ProjectsPeeklinkedRoute,

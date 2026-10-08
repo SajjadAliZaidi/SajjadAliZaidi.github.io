@@ -13,7 +13,7 @@ import {
 import { cloudTalk, type ProviderRow } from "@/data/cloudTalk";
 import { profile } from "@/data/portfolio";
 
-export const Route = createFileRoute("/cloud-talk")({
+export const Route = createFileRoute("/cs-nuces-lhr-cloud-talk-2026")({
   head: () => ({
     meta: [
       { title: cloudTalk.meta.title },
