@@ -14,7 +14,7 @@ const links = [
   { href: "/#contact", label: "Contact" },
 ];
 
-const pageLinks = [{ to: "/cloud-talk", label: "Cloud Talk" }] as const;
+const pageLinks = [{ to: "/cs-nuces-lhr-cloud-talk-2026", label: "Cloud Talk" }] as const;
 
 const linkClass =
   "group relative text-sm text-muted-foreground transition-colors hover:text-foreground";
