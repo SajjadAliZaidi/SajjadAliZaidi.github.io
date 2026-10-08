@@ -14,7 +14,7 @@ export default defineConfig({
           crawlLinks: true,
         },
       },
-      pages: [{ path: "/" }, { path: "/projects/askyourpages" }, { path: "/projects/padel-tournament" }, { path: "/projects/peeklinked" }],
+      pages: [{ path: "/" }, { path: "/projects/askyourpages" }, { path: "/projects/padel-tournament" }, { path: "/projects/peeklinked" }, { path: "/cloud-talk" }],
     }),
     tsconfigPaths(),
     react(),
