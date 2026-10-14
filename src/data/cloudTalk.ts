@@ -206,6 +206,25 @@ export const cloudTalk = {
     },
   ],
 
+  photos: [
+    {
+      src: "/assets/photos/cloud-talk/01-presenting.webp",
+      alt: "Sajjad Ali Zaidi presenting at the podium, with a slide reading “Set a budget alert before you launch anything.”",
+    },
+    {
+      src: "/assets/photos/cloud-talk/02-appreciation-shield.webp",
+      alt: "Sajjad Ali Zaidi receiving a shield of appreciation from FAST NUCES Lahore",
+    },
+    {
+      src: "/assets/photos/cloud-talk/03-classroom.webp",
+      alt: "View from the back of the classroom during the talk",
+    },
+    {
+      src: "/assets/photos/cloud-talk/04-audience.webp",
+      alt: "Students in the audience at FAST NUCES Lahore",
+    },
+  ],
+
   footerNote: {
     text: "Questions after the talk?",
     linkLabel: "Reach out on LinkedIn.",

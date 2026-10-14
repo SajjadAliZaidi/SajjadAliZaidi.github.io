@@ -1,13 +1,17 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 interface ScreenshotGalleryProps {
   images: Record<string, unknown>;
   altPrefix: string;
+  /** Optional per-image alt text, in the same order as `images`. */
+  alts?: string[];
+  className?: string;
 }
 
-export function ScreenshotGallery({ images, altPrefix }: ScreenshotGalleryProps) {
+export function ScreenshotGallery({ images, altPrefix, alts, className }: ScreenshotGalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const imageUrls = Object.keys(images).map((path) => path.replace("/public", ""));
@@ -53,7 +57,7 @@ export function ScreenshotGallery({ images, altPrefix }: ScreenshotGalleryProps)
 
   return (
     <>
-      <div className="mt-8 columns-2 sm:columns-3 gap-4 space-y-4">
+      <div className={cn("mt-8 columns-2 sm:columns-3 gap-4 space-y-4", className)}>
         {imageUrls.map((url, idx) => {
           const n = url.split("_").pop()?.split(".")[0] || url;
           return (
@@ -64,7 +68,7 @@ export function ScreenshotGallery({ images, altPrefix }: ScreenshotGalleryProps)
             >
               <img
                 src={url}
-                alt={`${altPrefix} screenshot ${n}`}
+                alt={alts?.[idx] ?? `${altPrefix} screenshot ${n}`}
                 className="w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                 loading="lazy"
               />
@@ -100,7 +104,7 @@ export function ScreenshotGallery({ images, altPrefix }: ScreenshotGalleryProps)
 
           <img
             src={imageUrls[selectedIndex]}
-            alt={`${altPrefix} screenshot`}
+            alt={alts?.[selectedIndex] ?? `${altPrefix} screenshot`}
             className="relative z-40 max-h-[90vh] max-w-[90vw] object-contain rounded-md shadow-2xl"
           />
 
