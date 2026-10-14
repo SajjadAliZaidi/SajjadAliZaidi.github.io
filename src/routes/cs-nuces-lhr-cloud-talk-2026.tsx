@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, ExternalLink, Linkedin, Presentation } from "lucide-react";
 import { Nav } from "@/components/portfolio/Nav";
 import { Footer } from "@/components/portfolio/Footer";
+import { ScreenshotGallery } from "@/components/portfolio/ScreenshotGallery";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -148,6 +149,7 @@ function CloudTalk() {
     roadmap,
     resources,
     stories,
+    photos,
     footerNote,
   } = cloudTalk;
 
@@ -342,6 +344,16 @@ function CloudTalk() {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+        </PageSection>
+
+        {/* ── 10. Photos ── */}
+        <PageSection id="photos" label="10 · photos" title="From the talk">
+          <ScreenshotGallery
+            images={Object.fromEntries(photos.map((p) => [`/public${p.src}`, p.src]))}
+            altPrefix="Cloud talk"
+            alts={photos.map((p) => p.alt)}
+            className="mt-0 columns-2 sm:columns-4"
+          />
         </PageSection>
 
         {/* ── Footer note ── */}
