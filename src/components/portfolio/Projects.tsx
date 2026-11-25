@@ -79,7 +79,9 @@ function ProjectCard({ p }: { p: (typeof projects)[0] }) {
             <LinkSlot internalUrl={p.internalUrl} icon={ArrowRight} label="View Project" />
           )}
           <LinkSlot href={p.liveUrl} icon={ExternalLink} label="Live Demo" />
-          <LinkSlot href={p.githubUrl} icon={Github} label="GitHub" />
+          {!("privateRepo" in p && p.privateRepo) && (
+            <LinkSlot href={p.githubUrl} icon={Github} label="GitHub" />
+          )}
         </div>
       </CardContent>
     </Card>

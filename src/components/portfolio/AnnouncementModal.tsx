@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { X, ArrowRight } from "lucide-react";
+import { X, ExternalLink } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 
@@ -71,7 +71,7 @@ export function AnnouncementModal() {
             <div className="px-6 pb-6 pt-5">
               {/* Eyebrow */}
               <p className="font-mono text-xs text-[#8b8b96]">
-                🚧 What I'm building right now
+                🚀 Just launched
               </p>
 
               {/* Heading */}
@@ -84,24 +84,26 @@ export function AnnouncementModal() {
 
               {/* Body */}
               <p className="mt-2 text-sm leading-relaxed text-[#8b8b96]">
-                Ask your PDF books anything, with page-level citations that jump
-                straight to the source. Coming soon.
+                Ask your PDF books anything and get answers with page citations
+                that open the exact passage. Live and free, with Urdu and Arabic
+                support.
               </p>
 
               {/* Actions */}
               <div className="mt-5 flex flex-wrap items-center gap-3">
                 <Button asChild size="sm" onClick={dismiss}>
-                  <Link to="/projects/askyourpages">
-                    Learn more
-                    <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
-                  </Link>
+                  <a href="https://askyourpages.com/" target="_blank" rel="noopener noreferrer">
+                    Try it free
+                    <ExternalLink className="ml-1.5 h-3.5 w-3.5" />
+                  </a>
                 </Button>
-                <button
+                <Link
+                  to="/projects/askyourpages"
                   onClick={dismiss}
                   className="text-sm text-[#8b8b96] transition-colors hover:text-[#e4e4e7]"
                 >
-                  Maybe later
-                </button>
+                  Learn more
+                </Link>
               </div>
             </div>
           </motion.div>

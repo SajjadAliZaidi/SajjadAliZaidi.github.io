@@ -51,9 +51,10 @@ export const certifications = [
 export const projects = [
   {
     title: "AskYourPages",
-    description: "Full-stack RAG app that lets users upload PDF books and ask questions about them, getting AI answers with page-level citations.",
-    tags: ["TypeScript", "React", "RAG"],
+    description: "Live and free. Upload a PDF book, ask questions, and get answers grounded in the book with page citations that open the exact passage. Supports Urdu and Arabic.",
+    tags: ["Next.js", "TypeScript", "Supabase", "pgvector", "RAG"],
     githubUrl: null,
+    privateRepo: true,
     liveUrl: "https://askyourpages.com/",
     internalUrl: "/projects/askyourpages",
   },
